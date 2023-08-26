@@ -7,9 +7,9 @@
 #include FT_FREETYPE_H
 #include FT_OUTLINE_H
 
-#if defined(_WIN32) && !defined(MSDFGEN_CMAKE_BUILD)
-    #pragma comment(lib, "freetype.lib")
-#endif
+// #if defined(_WIN32) && !defined(MSDFGEN_CMAKE_BUILD)
+//     #pragma comment(lib, "freetypeg.lib")
+// #endif
 
 namespace msdfgen {
 
