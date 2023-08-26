@@ -1,4 +1,4 @@
-project "freetype"
+project "msdfgenfreetype"
 	kind "StaticLib"
 	location "freetype"
 	language "C"
@@ -118,7 +118,7 @@ project "msdfgen"
 
 	links
 	{
-		"freetype",
+		"msdfgenfreetype",
 	}
 
 	filter "system:windows"
