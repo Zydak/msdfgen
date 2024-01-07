@@ -10,6 +10,11 @@ project "msdfgenfreetype"
     objdir "build/obj/%{cfg.buildcfg}"
     targetdir "build/bin/%{cfg.buildcfg}"
 
+	defines
+    {
+        "_CRT_SECURE_NO_WARNINGS"
+    }
+
 	files
 	{
 		"freetype/include/ft2build.h",
@@ -67,7 +72,8 @@ project "msdfgenfreetype"
 
 	defines
 	{
-		"FT2_BUILD_LIBRARY"
+		"FT2_BUILD_LIBRARY",
+        "_CRT_SECURE_NO_WARNINGS"
 	}
 
 	filter "system:windows"
@@ -81,10 +87,10 @@ project "msdfgenfreetype"
 		runtime "Release"
 		optimize "on"
 
-	filter "configurations:Dist"
+	filter "configurations:Distribution"
+		defines "DISTRIBUTION"
 		runtime "Release"
 		optimize "on"
-        symbols "off"
 
 project "msdfgen"
 	kind "StaticLib"
@@ -132,7 +138,7 @@ project "msdfgen"
 		runtime "Release"
 		optimize "on"
 
-	filter "configurations:Dist"
+	filter "configurations:Distribution"
+		defines "DISTRIBUTION"
 		runtime "Release"
 		optimize "on"
-        symbols "off"
