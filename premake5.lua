@@ -5,14 +5,14 @@ project "msdfgenfreetype"
 	architecture "x86_64"
     configurations { "Debug", "Release", "Dist" }
     platforms { "Windows", "Linux" }
-	staticruntime "off"
+	staticruntime "on"
 
     objdir "build/obj/%{cfg.buildcfg}"
     targetdir "build/bin/%{cfg.buildcfg}"
 
 	defines
     {
-        "_CRT_SECURE_NO_WARNINGS"
+        "D_CRT_SECURE_NO_WARNINGS",
     }
 
 	files
@@ -73,7 +73,7 @@ project "msdfgenfreetype"
 	defines
 	{
 		"FT2_BUILD_LIBRARY",
-        "_CRT_SECURE_NO_WARNINGS"
+        "D_CRT_SECURE_NO_WARNINGS",
 	}
 
 	filter "system:windows"
@@ -99,7 +99,7 @@ project "msdfgen"
 	architecture "x86_64"
 	configurations { "Debug", "Release", "Dist" }
 	platforms { "Windows", "Linux" }
-	staticruntime "off"
+	staticruntime "on"
 
     objdir "build/obj/%{cfg.buildcfg}"
     targetdir "build/bin/%{cfg.buildcfg}"
